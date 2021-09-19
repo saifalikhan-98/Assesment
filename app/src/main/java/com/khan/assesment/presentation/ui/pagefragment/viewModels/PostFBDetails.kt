@@ -1,4 +1,4 @@
-package com.khan.assesment.viewModels
+package com.khan.assesment.presentation.ui.pagefragment.viewModels
 
 import android.content.Context
 import android.util.Log
@@ -11,14 +11,17 @@ import com.khan.assesment.models.ResponseModel
 import com.khan.assesment.models.Result
 import com.khan.assesment.roomdb.ResponseDao
 import com.khan.assesment.roomdb.roomDataBaseClass
-import com.khan.assesment.utils.Resource
+import com.khan.assesment.network.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.lang.Exception
+import javax.inject.Inject
 
-class PostFBDetails(val commonRepo: CommonRepo) : ViewModel() {
+@HiltViewModel
+class PostFBDetails @Inject constructor(val commonRepo: CommonRepo) : ViewModel() {
 
 
         val profileDetails : MutableLiveData<Resource<ResponseModel>> = MutableLiveData()

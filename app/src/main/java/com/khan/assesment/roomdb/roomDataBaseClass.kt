@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.khan.assesment.models.Result
 
 
-@Database(entities = [Result::class],version = 1)
+@Database(entities = [Result::class],version = 2)
 abstract class roomDataBaseClass:RoomDatabase() {
 
     companion object{

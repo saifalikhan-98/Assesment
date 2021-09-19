@@ -1,4 +1,4 @@
-package com.khan.assesment.viewModels
+package com.khan.assesment.presentation.ui.pagefragment.viewModels
 
 import android.content.Context
 import android.util.Log
@@ -10,13 +10,16 @@ import com.khan.assesment.models.PageDetailsModel.UserIdModel
 import com.khan.assesment.models.RequestModel
 import com.khan.assesment.models.ResponseFromFbApi
 import com.khan.assesment.utils.PreferenceHelper
-import com.khan.assesment.utils.Resource
+import com.khan.assesment.network.Resource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
+import javax.inject.Inject
 
-class FbPageDetailsViewModel(val commonRepo: CommonRepo) : ViewModel() {
+@HiltViewModel
+class FbPageDetailsViewModel @Inject constructor(val commonRepo: CommonRepo) : ViewModel() {
 
 
 

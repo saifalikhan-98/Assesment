@@ -1,4 +1,4 @@
-package com.khan.assesment.ui.fragments
+package com.khan.assesment.presentation.ui.loginfragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.facebook.*
@@ -17,22 +18,24 @@ import com.google.gson.GsonBuilder
 import com.khan.assesment.models.BasicDetailsResponse
 import com.khan.assesment.R
 import com.khan.assesment.utils.PreferenceHelper
-import com.khan.assesment.viewModels.UserBasicDetails
+import com.khan.assesment.presentation.ui.pagefragment.viewModels.UserBasicDetails
 import com.khan.assesment.databinding.FragmentHomeBinding
-import com.khan.assesment.ui.activity.MainActivity
+import com.khan.assesment.presentation.ui.MainActivity
 import com.khan.assesment.utils.AppUtils
 import com.khan.assesment.utils.AppUtils.Companion.isNetworkAvailable
+import dagger.hilt.android.AndroidEntryPoint
 import org.json.JSONObject
 import java.util.*
 
 
 @Suppress("DEPRECATION")
+@AndroidEntryPoint
 class HomeFrag : Fragment(),FacebookCallback<LoginResult> {
 
     private lateinit var binding: FragmentHomeBinding
     private lateinit var callBackManager : CallbackManager
     private lateinit var mActivity : MainActivity
-    private lateinit var basicViewModel : UserBasicDetails
+    private val basicViewModel : UserBasicDetails by activityViewModels()
 
 
 
@@ -64,7 +67,7 @@ class HomeFrag : Fragment(),FacebookCallback<LoginResult> {
 
         if(isNetworkAvailable(requireContext())){
             initFaceBookLoginSetup(view)
-            initViewModel()
+
 
         }else{
             AppUtils.showToastMsg("Please make sure to have active internet connection",requireContext())
@@ -78,14 +81,6 @@ class HomeFrag : Fragment(),FacebookCallback<LoginResult> {
         return view
     }
 
-    private fun initViewModel() {
-
-        basicViewModel = ViewModelProviders.of(requireActivity()).get(UserBasicDetails::class.java)
-
-
-
-
-    }
 
     private fun initFaceBookLoginSetup(view: View) {
         callBackManager = CallbackManager.Factory.create()

@@ -1,14 +1,14 @@
-package com.khan.assesment.utils
+package com.khan.assesment.network
 
-import com.khan.assesment.Constants
-import com.khan.assesment.apis.ApiBuilder
+import com.khan.assesment.network.apis.ApiBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class RetrofitForFaceBook {
+class RetroFitInstance {
+
     companion object{
         private val retrofit by lazy {
 
@@ -22,7 +22,7 @@ class RetrofitForFaceBook {
 
 
             Retrofit.Builder()
-                .baseUrl(Constants.FACEBOOK_URL)
+                .baseUrl("http://65.2.9.217:5000/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .client(client)
                 .build()

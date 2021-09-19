@@ -1,4 +1,4 @@
-package com.khan.assesment.apis
+package com.khan.assesment.network.apis
 
 import com.khan.assesment.models.PageDetailsModel.PageIdModel
 import com.khan.assesment.models.RequestModel

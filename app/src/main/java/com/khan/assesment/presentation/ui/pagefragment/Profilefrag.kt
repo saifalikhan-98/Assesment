@@ -1,4 +1,4 @@
-package com.khan.assesment.ui.fragments
+package com.khan.assesment.presentation.ui.pagefragment
 
 import android.content.Context
 import android.os.Bundle
@@ -6,7 +6,6 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
@@ -14,9 +13,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.facebook.login.LoginManager
-import com.github.ybq.android.spinkit.sprite.Sprite
-import com.github.ybq.android.spinkit.style.DoubleBounce
-import com.github.ybq.android.spinkit.style.Wave
 import com.khan.assesment.R
 import com.khan.assesment.dataRepo.CommonRepo
 import com.khan.assesment.databinding.FragmentProfilefragBinding
@@ -25,24 +21,25 @@ import com.khan.assesment.roomdb.roomDataBaseClass
 import com.khan.assesment.utils.AppUtils
 import com.khan.assesment.utils.AppUtils.Companion.isNetworkAvailable
 import com.khan.assesment.utils.PreferenceHelper
-import com.khan.assesment.utils.Resource
-import com.khan.assesment.viewModelFact.GetFBPageDetails
-import com.khan.assesment.viewModelFact.PostFBDetailsModelFactory
-import com.khan.assesment.viewModels.FbPageDetailsViewModel
-import com.khan.assesment.viewModels.PostFBDetails
-import com.khan.assesment.viewModels.UserBasicDetails
+import com.khan.assesment.network.Resource
+import com.khan.assesment.presentation.ui.pagefragment.viewModelFact.GetFBPageDetails
+import com.khan.assesment.presentation.ui.pagefragment.viewModelFact.PostFBDetailsModelFactory
+import com.khan.assesment.presentation.ui.pagefragment.viewModels.FbPageDetailsViewModel
+import com.khan.assesment.presentation.ui.pagefragment.viewModels.PostFBDetails
+import com.khan.assesment.presentation.ui.pagefragment.viewModels.UserBasicDetails
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-
+@AndroidEntryPoint
 class Profilefrag : Fragment() {
 
 
     private lateinit var binding : FragmentProfilefragBinding
     private val basicDetails : UserBasicDetails by activityViewModels()
-    private lateinit var fbPageDetailsViewModel: FbPageDetailsViewModel
-    private lateinit var postDataToApi: PostFBDetails
+    private val fbPageDetailsViewModel: FbPageDetailsViewModel by activityViewModels()
+    private val postDataToApi: PostFBDetails by activityViewModels()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,12 +71,6 @@ class Profilefrag : Fragment() {
     }
 
     private fun initViewModel() {
-        val commonRepo = CommonRepo()
-        val fbModelProvider = GetFBPageDetails(commonRepo)
-        val postModelProvider = PostFBDetailsModelFactory(commonRepo)
-        fbPageDetailsViewModel = ViewModelProvider(this, fbModelProvider).get(FbPageDetailsViewModel::class.java)
-        postDataToApi = ViewModelProvider(this, postModelProvider).get(PostFBDetails::class.java)
-
 
         if(!isNetworkAvailable(requireContext())){
             CoroutineScope(Dispatchers.IO).launch {

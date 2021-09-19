@@ -1,0 +1,202 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "0b84c0afef7c7cef2c3c96d55fba1e38",
+    "entities": [
+      {
+        "tableName": "postapi",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`about` TEXT NOT NULL, `access_token` TEXT NOT NULL, `birthday` TEXT NOT NULL, `business` TEXT NOT NULL, `business_id` TEXT NOT NULL, `category` TEXT NOT NULL, `company_overview` TEXT NOT NULL, `contact_address` TEXT NOT NULL, `cover` TEXT NOT NULL, `current_location` TEXT NOT NULL, `description` TEXT NOT NULL, `emails` TEXT NOT NULL, `engagement` TEXT NOT NULL, `fan_count` TEXT NOT NULL, `followers_count` TEXT NOT NULL, `founded` TEXT NOT NULL, `has_whatsapp_business_number` TEXT NOT NULL, `has_whatsapp_number` TEXT NOT NULL, `id` TEXT NOT NULL, `link` TEXT NOT NULL, `location` TEXT NOT NULL, `log` TEXT NOT NULL, `name` TEXT NOT NULL, `page_id` TEXT NOT NULL, `phone` TEXT NOT NULL, `picture` TEXT NOT NULL, `rating_count` TEXT NOT NULL, `username` TEXT NOT NULL, `website` TEXT NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "about",
+            "columnName": "about",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "access_token",
+            "columnName": "access_token",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "birthday",
+            "columnName": "birthday",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "business",
+            "columnName": "business",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "business_id",
+            "columnName": "business_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "company_overview",
+            "columnName": "company_overview",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contact_address",
+            "columnName": "contact_address",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cover",
+            "columnName": "cover",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "current_location",
+            "columnName": "current_location",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "description",
+            "columnName": "description",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "emails",
+            "columnName": "emails",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "engagement",
+            "columnName": "engagement",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fan_count",
+            "columnName": "fan_count",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "followers_count",
+            "columnName": "followers_count",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "founded",
+            "columnName": "founded",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "has_whatsapp_business_number",
+            "columnName": "has_whatsapp_business_number",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "has_whatsapp_number",
+            "columnName": "has_whatsapp_number",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "link",
+            "columnName": "link",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "location",
+            "columnName": "location",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "log",
+            "columnName": "log",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "page_id",
+            "columnName": "page_id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "phone",
+            "columnName": "phone",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "picture",
+            "columnName": "picture",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "rating_count",
+            "columnName": "rating_count",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "username",
+            "columnName": "username",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "website",
+            "columnName": "website",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '0b84c0afef7c7cef2c3c96d55fba1e38')"
+    ]
+  }
+}

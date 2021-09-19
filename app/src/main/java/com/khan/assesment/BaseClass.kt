@@ -6,7 +6,9 @@ import android.widget.Toast
 import com.facebook.FacebookSdk
 import com.facebook.appevents.AppEvent
 import com.facebook.appevents.AppEventsLogger
+import dagger.hilt.android.HiltAndroidApp
 
+@HiltAndroidApp
 class BaseClass : Application() {
 
     override fun onCreate() {

@@ -5,16 +5,14 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.graphics.BitmapFactory
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import androidx.core.content.ContextCompat.getSystemService
 import com.khan.assesment.Constants.Companion.CHANNELID
 
 import com.khan.assesment.Constants.Companion.NOTIFICATIONCHANNELID
 import com.khan.assesment.R
-import com.khan.assesment.ui.activity.MainActivity
+import com.khan.assesment.presentation.ui.MainActivity
 
 class NotificationBuilder {
 
@@ -43,7 +41,7 @@ class NotificationBuilder {
         fun sendNotification(context: Context){
 
 
-            val intent = Intent(context,MainActivity::class.java).apply {
+            val intent = Intent(context, MainActivity::class.java).apply {
                 flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             }
             val pendingIntent: PendingIntent = PendingIntent.getActivity(context, 0, intent, 0)

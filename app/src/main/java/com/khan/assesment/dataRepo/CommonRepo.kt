@@ -1,8 +1,8 @@
 package com.khan.assesment.dataRepo
 
 import com.khan.assesment.models.RequestModel
-import com.khan.assesment.utils.RetroFitInstance
-import com.khan.assesment.utils.RetrofitForFaceBook
+import com.khan.assesment.network.RetroFitInstance
+import com.khan.assesment.network.RetrofitForFaceBook
 
 class CommonRepo {
 
