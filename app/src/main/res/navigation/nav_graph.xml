@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFrag">
+
+    <fragment
+        android:id="@+id/homeFrag"
+        android:name="com.khan.assesment.ui.fragments.HomeFrag"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFrag_to_profilefrag"
+            app:destination="@id/profilefrag"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/profilefrag"
+        android:name="com.khan.assesment.ui.fragments.Profilefrag"
+        android:label="fragment_profilefrag"
+        tools:layout="@layout/fragment_profilefrag"
+        app:enterAnim="@anim/from_left"
+        app:exitAnim="@anim/to_right"
+        app:popEnterAnim="@anim/from_right"
+        app:popExitAnim="@anim/to_left"/>
+</navigation>

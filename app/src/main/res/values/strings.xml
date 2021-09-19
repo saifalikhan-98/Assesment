@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Assesment</string>
+    <string name="facebook_app_id">830405230964201</string>
+    <string name="fb_login_protocol_scheme">fb830405230964201</string>
+
+
+
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="facebook">Facebook</string>
+    <string name="email_xample_com">email@xample.com</string>
+    <string name="dd_mm_yyy">dd/mm/yyy</string>
+    <string name="birthday">BirthDay</string>
+    <string name="android_application_developer">Android application developer</string>
+    <string name="examplename">ExampleName</string>
+    <string name="link">Link</string>
+    <string name="location">Location</string>
+    <string name="example_location">Example location</string>
+    <string name="linkhere">Link here</string>
+    <string name="email">Email</string>
+    <string name="buisness">Business</string>
+    <string name="engagement">Engagement</string>
+    <string name="fan_count">Fan Count</string>
+    <string name="followers_count">Followers Count</string>
+    <string name="rating_count">Rating Count</string>
+    <string name="page_overview">Page Overview : </string>
+    <string name="founded">Founded</string>
+    <string name="has_whatsapp_business">has whatsapp business</string>
+    <string name="has_whatsapp_number">has whatsapp number</string>
+    <string name="website">Website</string>
+    <string name="logout">Logout</string>
+    <string name="cant_access">Cant access</string>
+</resources>
