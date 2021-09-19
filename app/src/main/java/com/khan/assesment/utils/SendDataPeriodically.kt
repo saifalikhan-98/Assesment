@@ -32,9 +32,9 @@ class SendDataPeriodically(val appContext: Context, workerParams: WorkerParamete
 
     fun sendData(){
         val commonRepo = CommonRepo()
-        val userId =PreferenceHelper.getUserId(appContext)
+
         val pageID = PreferenceHelper.getPageID(appContext) ?:"loggedOut"
-        val isLogedIn = PreferenceHelper.getPageID(appContext)
+
         val accessToken = PreferenceHelper.getAccessToken(appContext) ?:"loggedOut"
 
         Log.d("fromWorkManger",pageID+" " + accessToken)
