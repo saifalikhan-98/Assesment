@@ -1,4 +1,4 @@
-package com.khan.assesment.presentation.ui.pagefragment.viewModels
+package com.khan.assesment.viewmodels.fbdetailsviewmodels
 
 import android.content.Context
 import android.util.Log

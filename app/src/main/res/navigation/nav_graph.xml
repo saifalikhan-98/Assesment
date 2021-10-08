@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/profilefrag"
-        android:name="com.khan.assesment.presentation.ui.pagefragment.Profilefrag"
+        android:name="com.khan.assesment.presentation.ui.pagefragment.ui.Profilefrag"
         android:label="fragment_profilefrag"
         tools:layout="@layout/fragment_profilefrag"
         app:enterAnim="@anim/from_left"

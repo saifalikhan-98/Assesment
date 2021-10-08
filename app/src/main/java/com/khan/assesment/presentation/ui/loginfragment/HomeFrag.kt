@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.facebook.*
 import com.facebook.AccessToken
@@ -18,7 +17,7 @@ import com.google.gson.GsonBuilder
 import com.khan.assesment.models.BasicDetailsResponse
 import com.khan.assesment.R
 import com.khan.assesment.utils.PreferenceHelper
-import com.khan.assesment.presentation.ui.pagefragment.viewModels.UserBasicDetails
+import com.khan.assesment.viewmodels.fbdetailsviewmodels.UserBasicDetails
 import com.khan.assesment.databinding.FragmentHomeBinding
 import com.khan.assesment.presentation.ui.MainActivity
 import com.khan.assesment.utils.AppUtils

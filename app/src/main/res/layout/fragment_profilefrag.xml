@@ -7,17 +7,17 @@
     <data>
         <variable
             name="basic"
-            type="com.khan.assesment.presentation.ui.pagefragment.viewModels.UserBasicDetails" />
+            type="com.khan.assesment.viewmodels.fbdetailsviewmodels.UserBasicDetails" />
         <variable
             name="page"
-            type="com.khan.assesment.presentation.ui.pagefragment.viewModels.FbPageDetailsViewModel" />
+            type="com.khan.assesment.viewmodels.fbdetailsviewmodels.FbPageDetailsViewModel" />
 
 
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    tools:context=".presentation.ui.pagefragment.Profilefrag"
+    tools:context=".presentation.ui.pagefragment.ui.Profilefrag"
     android:layout_height="match_parent"
     android:background="@color/screenbackground"
    >
