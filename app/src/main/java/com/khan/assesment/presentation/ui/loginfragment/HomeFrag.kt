@@ -61,11 +61,11 @@ class HomeFrag : Fragment(),FacebookCallback<LoginResult> {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        //binding = FragmentHomeBinding.inflate(layoutInflater)
-        val view = inflater.inflate(R.layout.fragment_home,container,false)
+        binding = FragmentHomeBinding.inflate(layoutInflater)
+
 
         if(isNetworkAvailable(requireContext())){
-            initFaceBookLoginSetup(view)
+            initFaceBookLoginSetup()
 
 
         }else{
@@ -77,13 +77,13 @@ class HomeFrag : Fragment(),FacebookCallback<LoginResult> {
 
 
 
-        return view
+        return binding.root
     }
 
 
-    private fun initFaceBookLoginSetup(view: View) {
+    private fun initFaceBookLoginSetup() {
         callBackManager = CallbackManager.Factory.create()
-        val login = view.findViewById<LoginButton>(R.id.login_button)
+        val login = binding.loginButton
         login.fragment=this
         login.setPermissions(Arrays.asList("email","pages_read_engagement","pages_read_user_content","business_management","pages_manage_metadata"))
         login.registerCallback(callBackManager, this)
@@ -163,6 +163,8 @@ class HomeFrag : Fragment(),FacebookCallback<LoginResult> {
 
         Log.d("FacebookLogin", error.toString())
     }
+
+    // I have used deprecated method onActivityResult below this commented code  below is the new way
 /*
 
     val regiterForResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()){
